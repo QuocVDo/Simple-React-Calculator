@@ -1,0 +1,94 @@
+/*
+* Select all elements on the page and force them to use 
+* box-sizing: border-box, makes it easier to add borders 
+* and padding because they are included within the height
+* and width of that element
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(to right, blue 10%, purple);
+}
+
+/*
+* Calc GRID
+* Columns set with repeat(4,6rem), means 4 columns each of size 6 rem
+* 
+*/
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 6rem);
+  margin-top: 10rem;
+  /*
+   * First row is the output row, we want it to be flexible and able  
+   * to take up as big of a space as it wants. The minimum size of the
+   * row will be 7rem, and the  max size is automatically determined
+   * 
+   * The rest of the rows are set using repeat(), there are 5 rows
+   * each of size 6rem 
+   */
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+  justify-content: center;
+}
+
+/*
+ * Styling for button elements within calculator grid
+ */
+.calc-grid > button {
+  font-size: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+  border: 1px solid black;
+}
+
+/*
+ * Some button elements will need to span 2 columns rather than 1.
+ *
+ */
+.span-two {
+  grid-column: span 2;
+}
+
+/*
+ * This handle styling for the output box
+ *
+ */
+.output-box {
+  /* grid column spans all columns */
+  grid-column: 1 / -1;
+
+  /*  Rgba, set the background to be black with a little bit of transparency */
+  background-color: rgba(0, 0, 0, 0.7);
+
+  /* flexbox magic: possible revisit */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 0rem;
+  word-wrap: break-word;
+  word-break: break-all;
+
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/*
+ * Text Color is slightly transparent just for funsies
+ * This shows the previous value of the calculator.
+ */
+.previousOp {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 1rem;
+}
+
+.currOp {
+  margin: 1rem;
+  color: rgba(255, 255, 255, 1);
+
+  /* font size is twice as big */
+  font-size: 2rem;
+}

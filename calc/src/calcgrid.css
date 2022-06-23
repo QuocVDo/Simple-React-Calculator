@@ -23,7 +23,7 @@ body {
 .calc-grid {
   display: grid;
   grid-template-columns: repeat(4, 6rem);
-  margin-top: 10rem;
+  margin-top: 7rem;
   /*
    * First row is the output row, we want it to be flexible and able  
    * to take up as big of a space as it wants. The minimum size of the
@@ -85,10 +85,37 @@ body {
   margin: 1rem;
 }
 
+/*
+ * Text Color is solid white
+ * This shows the mcurrent value of the calculator
+ */
 .currOp {
   margin: 1rem;
   color: rgba(255, 255, 255, 1);
 
   /* font size is twice as big */
   font-size: 2rem;
+}
+
+.title {
+  text-align: center;
+  margin-top: 4rem;
+  border: 5px solid black;
+  background-color: rgba(0, 0, 0, 0.7);
+  outline: 1px solid white;
+}
+
+.title > h1 {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 4rem;
+}
+
+.title > h2 {
+  display: flex;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.5rem;
 }

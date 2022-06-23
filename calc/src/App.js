@@ -21,7 +21,10 @@ function App() {
 
   //Meat of the logic, handle the actual updating of the state logic
   function handleEval() {
-    console.log(currDisplay);
+    const operands = currDisplay.split('+');
+    console.log('Operand 1 is: ' + operands[0]);
+    console.log('Operand 2 is: ' + operands[1]);
+    updateDisplay(Number(operands[0]) + Number(operands[1]));
   }
   return (
     //Big Calculator Grid that encompasses all components

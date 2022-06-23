@@ -1,5 +1,6 @@
 {
   "name": "calc",
+  "homepage": "https://QuocVDo.github.io/Simple-React-Calculator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
